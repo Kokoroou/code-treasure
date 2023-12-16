@@ -1,0 +1,10 @@
+//Change default file JavaC.sublime-build
+//need to update with case run file in a package
+{
+	"cmd": ["javac $file && java $file_base_name"],
+	"shell": true,
+	//or "shell_cmd": "javac \"$file\" && java \"$file_base_name\""
+
+	"file_regex": "^(...*?):([0-9]*):?([0-9]*)",
+	"selector": "source.java",
+}

@@ -1,0 +1,20 @@
+// Change default file "Python.sublime-build"
+
+{
+	"shell_cmd": "python -u \"$file\"",   //or "cmd": ["python", "$file"]
+	"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)", //or "py$"
+	"selector": "source.python",
+	// "path": "D:\\Python\\Python37-32", //add address to PATH of system instead
+
+	"env": {"PYTHONIOENCODING": "utf-8"}, //or "utf8" if "utf-8" is not running
+
+	// "variants":
+	// [
+	// 	{
+	// 		"name": "Syntax Check",
+	// 		"shell_cmd": "python -m py_compile \"${file}\"",
+	// 	}
+	// ]
+}
+
+
