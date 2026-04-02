@@ -29,7 +29,7 @@ if __name__ == "__main__":
                 delete_directory(path)
     else:
         print(f"Thư mục {directory_path} không tồn tại.")
-    
+
     print()
     print("--------------------")
     print("Chương trình sẽ kết thúc sau 5 giây.")

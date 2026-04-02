@@ -1,6 +1,6 @@
-from selenium import webdriver
-from bs4 import BeautifulSoup as bs
 import pandas as pd
+from bs4 import BeautifulSoup as bs
+from selenium import webdriver
 
 driver = webdriver.Chrome("chromedriver.exe")
 
@@ -17,4 +17,3 @@ soup = bs(content, features="html.parser")
 # print(content)
 # print("-----\n-----\n-----\n-----\n-----\n-----\n-----\n-----\n-----\n-----\n-----\n-----\n-----")
 # print(soup)
-

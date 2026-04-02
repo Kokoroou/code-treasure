@@ -1,22 +1,47 @@
 def is_yes(choice):
-    return choice in ('Y', 'y')
+    return choice in ("Y", "y")
+
+
 def is_no(choice):
-    return choice in ('N', 'n')
+    return choice in ("N", "n")
 
 
-items = ["bandaid", "bouquet", "cosmetics", "cheese", "earring", "eredille necklace",
-         "fish", "friendship cupcake", "frog", "grimoire", "herbal soap", "jewel box",
-         "lotus brooch", "luxury ring", "milk", "potion", "silverware", "star compass",
-         "tarot cards", "tulip", "wild pinkberry"]
+items = [
+    "bandaid",
+    "bouquet",
+    "cosmetics",
+    "cheese",
+    "earring",
+    "eredille necklace",
+    "fish",
+    "friendship cupcake",
+    "frog",
+    "grimoire",
+    "herbal soap",
+    "jewel box",
+    "lotus brooch",
+    "luxury ring",
+    "milk",
+    "potion",
+    "silverware",
+    "star compass",
+    "tarot cards",
+    "tulip",
+    "wild pinkberry",
+]
+
 
 def check_valid(item):
     return lower(item) in items
 
+
 def find_relevance(item):
     pass
 
+
 def check_girls_preference(item):
     pass
+
 
 def run():
     item = input("You have ")

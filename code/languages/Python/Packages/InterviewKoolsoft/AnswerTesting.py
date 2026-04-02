@@ -4,7 +4,10 @@ MAX_H = 2852
 content = open("quetions.txt").read()
 
 question_height = content.split("\n")
-list_qh = [(key, int(float(value))) for key, value in [q_h.split(" ") for q_h in question_height]]
+list_qh = [
+    (key, int(float(value)))
+    for key, value in [q_h.split(" ") for q_h in question_height]
+]
 list_qh.sort(key=lambda x: x[1], reverse=True)
 
 QUESTION_ID = [x[0] for x in list_qh]
@@ -28,7 +31,6 @@ def solve(index):
     global page, page_count, line_count
     global current_page, current_line_left
 
-
     queue = []
 
     if index == QUESTION_COUNT:
@@ -38,7 +40,9 @@ def solve(index):
                 page_count = len(current_page)
                 line_count = sum(current_line_left)
                 print(current_line_left)
-            elif len(current_page) == page_count and sum(current_line_left) < line_count:
+            elif (
+                len(current_page) == page_count and sum(current_line_left) < line_count
+            ):
                 page = [p.copy for p in current_page]
                 page_count = len(current_page)
                 line_count = sum(current_line_left)
@@ -76,9 +80,8 @@ def solve(index):
             current_line_left.pop(choice)
     return 0
 
+
 solve(0)
 print(page)
 print(page_count)
 print(line_count)
-
-

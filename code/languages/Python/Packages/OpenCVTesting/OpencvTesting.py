@@ -1,5 +1,7 @@
-import cv2 as cv
 import os
+
+import cv2 as cv
+
 # images = list(map(cv.imread, ["D:/test/test{}.jpg".format(i) for i in range(1,5)]))
 
 # for n in range(len(images)):
@@ -22,12 +24,12 @@ n = 1.5
 img = cv.imread("test4.jpg", 1)
 (h, w, d) = img.shape
 rate = 624 / h
-img = cv.resize(img, (int(w*rate), 624))
+img = cv.resize(img, (int(w * rate), 624))
 
 cv.imshow("first", img)
 cv.waitKey(0)
 print(img.shape)
-print("Size of that photo is:\nheight = %d\nwidth = %d\ndepth = %d"%img.shape)
+print("Size of that photo is:\nheight = %d\nwidth = %d\ndepth = %d" % img.shape)
 
 # img1 = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
 # cv.imshow("second", img1)
@@ -36,7 +38,7 @@ print("Size of that photo is:\nheight = %d\nwidth = %d\ndepth = %d"%img.shape)
 
 # cap = cv.VideoCapture("Món quà 20-10-2020.mp4")
 
-# while(cap.isOpened()):	
+# while(cap.isOpened()):
 # 	frame = cap.read()[1]
 # 	cv.imshow("video", cv.cvtColor(frame, cv.COLOR_BGR2GRAY))
 # 	if cv.waitKey(40) == ord("q"): break

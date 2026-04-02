@@ -1,20 +1,25 @@
-from selenium import webdriver
 from time import sleep
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.common.by import By
+
+from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
 
 
 def open_browser():
     # Declare browser
     browser_options = Options()
     browser_options.add_argument("--incognito")
-    browser_options.add_argument("--headless")  # Uncomment this line to open browser in background
+    browser_options.add_argument(
+        "--headless"
+    )  # Uncomment this line to open browser in background
     browser_options.add_experimental_option("detach", True)
 
     # Open browser
-    browser = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=browser_options)
+    browser = webdriver.Chrome(
+        service=Service(ChromeDriverManager().install()), options=browser_options
+    )
 
     return browser
 
@@ -28,7 +33,9 @@ def search_manga(manga_name):
 
 
 def get_manga_name(browser):
-    path_to_manga = browser.find_element(By.XPATH, "//*[@id='breadcrumbs']/span[2]").text
+    path_to_manga = browser.find_element(
+        By.XPATH, "//*[@id='breadcrumbs']/span[2]"
+    ).text
 
     manga_name = path_to_manga.lstrip("Trang chủ > ")
 
@@ -37,7 +44,10 @@ def get_manga_name(browser):
 
 def get_chapters_name(browser):
     # Get chapters' name in descending order
-    chapters_name = [element.text for element in browser.find_elements(By.CSS_SELECTOR, "a[id^='c_']")]
+    chapters_name = [
+        element.text
+        for element in browser.find_elements(By.CSS_SELECTOR, "a[id^='c_']")
+    ]
 
     return chapters_name
 
